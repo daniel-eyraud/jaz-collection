@@ -17,11 +17,7 @@ async function populateCollection() {
     const photo = row.c[4].v;
     const productCard = document.createElement("div");
 
-    let photoURL = "images/no-photo.webp";
-    if (photo != null) {
-      const fileId = photo.split("/")[5];
-      photoURL = `https://lh3.googleusercontent.com/d/${fileId}`;
-    }
+    let photoURL = photo !== null ? photo : "images/no-photo.webp";
 
     productCard.classList.add("col-12", "col-md-6", "col-lg-4", "product-card");
     productCard.innerHTML = `
