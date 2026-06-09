@@ -15,22 +15,24 @@ async function populateCollection() {
     const annee = row.c[2].v;
     const commentaire = row.c[3].v;
     const photo = row.c[4].v;
-    console.log(photo);
     const productCard = document.createElement("div");
 
-    let photoURL = "images/no-photo.jpg";
+    let photoURL = "images/no-photo.webp";
     if (photo != null) {
       const fileId = photo.split("/")[5];
       photoURL = `https://lh3.googleusercontent.com/d/${fileId}`;
     }
 
-    productCard.classList.add("product-card");
+    productCard.classList.add("col-12", "col-md-6", "col-lg-4", "product-card");
     productCard.innerHTML = `
-    <h2>${nom}</h2>
-    <img src="${photoURL}" alt="${nom}">
-    <p class="collection">Collection: ${collection}</p>
-    <p class="annee">Année: ${annee}</p>
-    <p class="commentaire">Commentaire: ${commentaire}</p>
+        <div class="card">
+        <img src="${photoURL}" class="img-thumbnail" alt="${nom}">
+        <div class="card-body">
+            <h5 class="card-title">${nom} - ${annee}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Collection: ${collection}</h6>
+            <p class="card-text">${commentaire}</p>
+        </div>
+        </div>
     `;
     collectionContainer.appendChild(productCard);
   });
