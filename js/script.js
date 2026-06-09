@@ -15,11 +15,19 @@ async function populateCollection() {
     const annee = row.c[2].v;
     const commentaire = row.c[3].v;
     const photo = row.c[4].v;
+    console.log(photo);
     const productCard = document.createElement("div");
+
+    let photoURL = "images/no-photo.jpg";
+    if (photo != null) {
+      const fileId = photo.split("/")[5];
+      photoURL = `https://lh3.googleusercontent.com/d/${fileId}`;
+    }
+
     productCard.classList.add("product-card");
     productCard.innerHTML = `
     <h2>${nom}</h2>
-    <img src="${photo}" alt="${nom}">
+    <img src="${photoURL}" alt="${nom}">
     <p class="collection">Collection: ${collection}</p>
     <p class="annee">Année: ${annee}</p>
     <p class="commentaire">Commentaire: ${commentaire}</p>
