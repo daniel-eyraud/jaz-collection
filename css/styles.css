@@ -13,6 +13,7 @@
   --color-orange: #c06225;
   --color-brown: #984519;
   --color-raisinBlack: #2e201d;
+  --color-green: #26422b;
 }
 
 /* ---------------- General styles ---------------- */
@@ -67,10 +68,23 @@ img {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
-  border: var(--color-brown) 1px solid;
   border-radius: 5px;
 }
 
 .card-body {
   height: 30%;
+}
+
+.card-title {
+  font-family: var(--font-subtitle);
+  font-size: 1.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.card-subtitle {
+  font-size: 1rem;
+}
+
+.card-text {
+  font-size: 0.8rem;
 }
