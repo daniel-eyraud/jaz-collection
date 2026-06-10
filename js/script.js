@@ -19,15 +19,17 @@ async function populateCollection() {
 
     let photoURL = photo !== null ? photo : "images/no-photo.webp";
 
-    productCard.classList.add("col-12", "col-md-6", "col-lg-4", "product-card");
+    productCard.classList.add("col-12", "col-md-6", "col-lg-3", "product-card");
     productCard.innerHTML = `
         <div class="card">
-        <img src="${photoURL}" class="img-thumbnail" alt="${nom}">
-        <div class="card-body">
-            <h5 class="card-title">${nom} - ${annee}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Collection: ${collection}</h6>
-            <p class="card-text">${commentaire}</p>
-        </div>
+          <div class="card-image"> 
+            <img src="${photoURL}" alt="${nom}">
+          </div>
+            <div class="card-body">
+                <h5 class="card-title">${nom} - ${annee}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Collection: ${collection}</h6>
+                <p class="card-text">${commentaire}</p>
+            </div>
         </div>
     `;
     collectionContainer.appendChild(productCard);
