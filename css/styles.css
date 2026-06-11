@@ -78,7 +78,7 @@ footer p {
   transition: transform 0.3s ease;
 }
 
-.card {
+.product-card .card {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -115,3 +115,37 @@ img {
 }
 
 /* ---------------- Card styles Detail page ---------------- */
+.detail-product-card {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.detail-product-card .card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: transparent;
+}
+
+.detail-card-image {
+  padding: 1.2rem;
+}
+
+.detail-card-image img {
+  border-radius: 5px;
+}
+
+.detail-card-body {
+  padding: 1.2rem;
+  text-align: left;
+}
+
+.detail-card-title {
+  font-family: var(--font-title);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.detail-card-text {
+  margin-bottom: 1rem;
+}

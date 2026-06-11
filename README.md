@@ -20,6 +20,7 @@ This project is a static website showcasing a vintage JAZ alarm clock collection
 ## Areas for Improvement
 
 - Style Detail Page / refine Main page (text + add one more set of colour?)
+  - Add Carroussel option for images
 - Add a button to go back to main page from the detail page
 - Add a About me page?
 - Add a dynamic header with Menu

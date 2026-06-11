@@ -29,24 +29,24 @@ async function populateDetail() {
     .map((h) => data[h]) //
     .filter((url) => url); // filter out any undefined or null values from the array of photo URLs
 
-  const productCard = document.createElement("div");
+  const detailProductCard = document.createElement("div");
 
-  productCard.classList.add("col-6", "product-card");
-  productCard.innerHTML = `
+  detailProductCard.classList.add("col-12", "detail-product-card");
+  detailProductCard.innerHTML = `
     <div class="card">
         <div class="detail-card-image"> 
             ${photos.map((url) => `<img src="${url}" alt="${data["nom"]}">`).join("")}
         </div>
         <div class="detail-card-body">
             <h5 class="detail-card-title">${data["nom"]}</h5>
-            <p class="detail-card-text">${data["annee"] ?? ""}</p>
-            <p class="detail-card-text">${data["collection"] ?? ""}</p>
-            <p class="detail-card-text">${data["commentaire"] ?? ""}</p>
-            <p class="detail-card-text">${data["etat"] ?? ""}</p>
+            <p class="detail-card-text">${`Année: ${data["annee"] ?? ""}`}</p>
+            <p class="detail-card-text">${`Collection: ${data["collection"] ?? ""}`}</p>
+            <p class="detail-card-text">${`Quelques info: ${data["commentaire"] ?? ""}`}</p>
+            <p class="detail-card-text">${`État: ${data["etat"] ?? ""}`}</p>
         </div>
     </div>
     `;
-  detailContainer.appendChild(productCard);
+  detailContainer.appendChild(detailProductCard);
 }
 
 populateDetail();
