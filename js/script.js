@@ -19,7 +19,8 @@ async function populateCollection() {
   const headers = json.table.cols.map((col) => col.label.toLowerCase()); // const headers = ["nom", "collection", "annee", "etat",....];
 
   rows.forEach((row, index) => {
-    const data = {}; // Create an object to hold the data of the table for each row, headers are the keys and the corresponding cell values are the values of the object
+    const data = {}; // Create an empty object to hold the data of each row
+    // populate the object with the headers as keys and the corresponding cell values as values from each row
     headers.forEach((header, i) => {
       data[header] = row.c[i]?.v;
     });
@@ -28,10 +29,8 @@ async function populateCollection() {
 
     const colorIndex = index % cardColor.length; // Cycle through the cardColor array to assign colors to the cards on a rotating basis
 
-    let photoURL =
-      data["photo"] !== undefined && data["photo"] !== null
-        ? data["photo"]
-        : "images/no-photo.webp"; // Use a default image if the photo URL is missing so data is either undefined or null
+    // Use a default image if the photo URL is missing so data is either undefined or null
+    let photoURL = data["photo"] ?? "images/no-photo.webp"; // ?? returns the right-hand side operand when the left-hand side operand is null or undefined, otherwise it returns the left-hand side operand
 
     productCard.classList.add("col-12", "col-md-6", "col-lg-3", "product-card");
     productCard.innerHTML = `

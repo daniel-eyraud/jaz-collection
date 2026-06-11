@@ -11,35 +11,40 @@ async function populateDetail() {
   const text = await response.text();
   const json = JSON.parse(text.substring(47).slice(0, -2));
   const rows = json.table.rows;
-  const selectedRow = rows[id];
-  const headers = json.table.cols.map((col) => col.label.toLowerCase()); // const headers = ["nom", "collection", "annee", "etat",....];
-  const data = {};
 
+  const selectedRow = rows[id]; // get the raw value of the corresponding row (id is the index of the row in the table)
+
+  const headers = json.table.cols.map((col) => col.label.toLowerCase()); // get the headers of the sheet
+
+  const data = {}; // create an empty object to hold the data of the selected row
+
+  // populate the object with the headers as keys and the corresponding cell values as values from selectedRow
   headers.forEach((header, i) => {
     data[header] = selectedRow.c[i]?.v;
   });
 
-  const productCard = document.createElement("div");
+  // Get all photo URLs from the data object
+  const photos = headers
+    .filter((h) => h.includes("photo")) // filter the headers to get only those that include "photo"
+    .map((h) => data[h]) //
+    .filter((url) => url); // filter out any undefined or null values from the array of photo URLs
 
-  let photoURL =
-    data["photo"] !== undefined && data["photo"] !== null
-      ? data["photo"]
-      : "images/no-photo.webp"; // Use a default image if the photo URL is missing so data is either undefined or null
+  const productCard = document.createElement("div");
 
   productCard.classList.add("col-6", "product-card");
   productCard.innerHTML = `
     <div class="card">
-        <div class="card-image"> 
-            <img src="${photoURL}" alt="${data["nom"]}">
-            </div>
-              <div class="card-body">
-                <h5 class="card-title">${data["nom"]}</h5>
-                <p class="card-text">${data["annee"] ?? ""}</p>
-                <p class="card-text">${data["collection" ?? ""]}</p>
-                <p class="card-text">${data["commentaire"] ?? ""}</p>
-                <p class="card-text">${data["etat"] ?? ""}</p>
-              </div>
+        <div class="detail-card-image"> 
+            ${photos.map((url) => `<img src="${url}" alt="${data["nom"]}">`).join("")}
         </div>
+        <div class="detail-card-body">
+            <h5 class="detail-card-title">${data["nom"]}</h5>
+            <p class="detail-card-text">${data["annee"] ?? ""}</p>
+            <p class="detail-card-text">${data["collection"] ?? ""}</p>
+            <p class="detail-card-text">${data["commentaire"] ?? ""}</p>
+            <p class="detail-card-text">${data["etat"] ?? ""}</p>
+        </div>
+    </div>
     `;
   detailContainer.appendChild(productCard);
 }
