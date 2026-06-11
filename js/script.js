@@ -35,15 +35,17 @@ async function populateCollection() {
 
     productCard.classList.add("col-12", "col-md-6", "col-lg-3", "product-card");
     productCard.innerHTML = `
-        <div class="card" style="background: ${cardColor[colorIndex].background}; color: ${cardColor[colorIndex].color};">
-          <div class="card-image"> 
-            <img src="${photoURL}" alt="${data["nom"]}">
-          </div>
-            <div class="card-body">
-                <h5 class="card-title">${data["nom"]}</h5>
-                <p class="card-subtitle">${data["annee"]}</p>
+        <a href = "detail.html?id=${index}">
+          <div class="card" style="background: ${cardColor[colorIndex].background}; color: ${cardColor[colorIndex].color};">
+            <div class="card-image"> 
+              <img src="${photoURL}" alt="${data["nom"]}">
             </div>
-        </div>
+              <div class="card-body">
+                  <h5 class="card-title">${data["nom"]}</h5>
+                  <p class="card-subtitle">${data["annee"]}</p>
+              </div>
+          </div>
+        </a>  
     `;
     collectionContainer.appendChild(productCard);
   });
