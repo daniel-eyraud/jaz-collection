@@ -17,22 +17,10 @@ This project is a static website showcasing a vintage JAZ alarm clock collection
 - [Feature 1]
 - [Feature 2]
 
-## Project Setup
-
-[Commands to run the project]
-
-## Development Approach
-
-[How we developped this project — logic, UX etc.]
-
-## Refactoring & Decisions
-
-[Technical choices, why]
-
-## Lessons Learned
-
-[What we should do differently and why]
-
 ## Areas for Improvement
 
-[Future functionnalities, improvements]
+- Style Detail Page / refine Main page (text + add one more set of colour?)
+- Add a button to go back to main page from the detail page
+- Add a About me page?
+- Add a dynamic header with Menu
+- Refine style for different screen sizes

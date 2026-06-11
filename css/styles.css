@@ -62,10 +62,20 @@ footer p {
   margin: 0;
 }
 
-/* ---------------- Card styles ---------------- */
+/* ---------------- Card styles Main page ---------------- */
 .product-card {
   height: 400px;
   margin-bottom: 24px;
+}
+
+.product-card a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease;
 }
 
 .card {
@@ -103,3 +113,5 @@ img {
 .card-text {
   font-size: 0.8rem;
 }
+
+/* ---------------- Card styles Detail page ---------------- */
