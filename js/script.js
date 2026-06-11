@@ -42,7 +42,7 @@ async function populateCollection() {
             </div>
               <div class="card-body">
                   <h5 class="card-title">${data["nom"]}</h5>
-                  <p class="card-subtitle">${data["annee"]}</p>
+                  <p class="card-subtitle">${data["annee"] ?? ""}</p>
               </div>
           </div>
         </a>  
