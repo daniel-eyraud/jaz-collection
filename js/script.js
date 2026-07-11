@@ -12,26 +12,28 @@ const cardColor = [
 ];
 
 async function populateCollection() {
+  // Fetch Google sheet raw data
   const response = await fetch(apiURL);
   const text = await response.text();
   const json = JSON.parse(text.substring(47).slice(0, -2));
-  const rows = json.table.rows;
+
+  // Get the sheet headers in a string format -> ['nom', 'annee', 'etat', 'commentaire', 'photo'...]
   const headers = json.table.cols.map((col) => col.label.toLowerCase()); // const headers = ["nom", "collection", "annee", "etat",....];
 
+  // Get data for each row in an object format -> {nom: 'TEST', annee: 1900, etat: 'Excellent ', ...}
+  const rows = json.table.rows;
   rows.forEach((row, index) => {
-    const data = {}; // Create an empty object to hold the data of each row
-    // populate the object with the headers as keys and the corresponding cell values as values from each row
+    const data = {};
     headers.forEach((header, i) => {
-      data[header] = row.c[i]?.v;
+      data[header] = row.c[i]?.v; // -> // data["nom"] = "Réveil Bayard";
     });
 
-    const productCard = document.createElement("div");
-
-    const colorIndex = index % cardColor.length; // Cycle through the cardColor array to assign colors to the cards on a rotating basis
-
+    // Cycle through the cardColor array to assign colors to the cards
+    const colorIndex = index % cardColor.length;
     // Use a default image if the photo URL is missing so data is either undefined or null
-    let photoURL = data["photo"] ?? "images/no-photo.webp"; // ?? returns the right-hand side operand when the left-hand side operand is null or undefined, otherwise it returns the left-hand side operand
-
+    let photoURL = data["photo"] ?? "images/no-photo.webp";
+    // Create a card for each row of the data object and populate with values
+    const productCard = document.createElement("div");
     productCard.classList.add("col-12", "col-md-6", "col-lg-3", "product-card");
     productCard.innerHTML = `
         <a href = "detail.html?id=${index}">

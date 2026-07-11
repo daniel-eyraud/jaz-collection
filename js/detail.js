@@ -40,7 +40,6 @@ async function populateDetail() {
         <div class="detail-card-body">
             <h5 class="detail-card-title">${data["nom"]}</h5>
             <p class="detail-card-text">${`Année: ${data["annee"] ?? ""}`}</p>
-            <p class="detail-card-text">${`Collection: ${data["collection"] ?? ""}`}</p>
             <p class="detail-card-text">${`Quelques info: ${data["commentaire"] ?? ""}`}</p>
             <p class="detail-card-text">${`État: ${data["etat"] ?? ""}`}</p>
         </div>
