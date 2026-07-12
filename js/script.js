@@ -34,17 +34,14 @@ async function populateCollection() {
     let photoURL = data["photo"] ?? "images/no-photo.webp";
     // Create a card for each row of the data object and populate with values
     const productCard = document.createElement("div");
-    productCard.classList.add("col-12", "col-md-6", "col-lg-3", "product-card");
+    productCard.classList.add("product-card", "col-12", "col-md-6", "col-lg-4");
     productCard.innerHTML = `
         <a href = "detail.html?id=${index}">
-          <div class="card" style="background: ${cardColor[colorIndex].background}; color: ${cardColor[colorIndex].color};">
+          <div class="card-body" style="background: ${cardColor[colorIndex].background}; color: ${cardColor[colorIndex].color};">
             <div class="card-image"> 
               <img src="${photoURL}" alt="${data["nom"]}">
             </div>
-              <div class="card-body">
-                  <h5 class="card-title">${data["nom"]}</h5>
-                  <p class="card-subtitle">${data["annee"] ?? ""}</p>
-              </div>
+              <h5 class="card-title">${data["nom"]}</h5>
           </div>
         </a>  
     `;

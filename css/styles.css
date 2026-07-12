@@ -27,7 +27,6 @@ body {
 
 /* ---------------- Header ---------------- */
 header {
-  padding: 1rem;
   border-bottom: var(--color-brown) 1px solid;
 }
 
@@ -52,14 +51,22 @@ footer p {
 }
 
 /* ---------------- Card styles Main page ---------------- */
+#collection-container {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .product-card {
-  height: 400px;
   margin-bottom: 24px;
+  border-radius: 10px;
+  max-width: min(95%, 450px);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .product-card a {
   text-decoration: none;
-  color: inherit;
 }
 
 .product-card:hover {
@@ -67,42 +74,27 @@ footer p {
   transition: transform 0.3s ease;
 }
 
-.product-card .card {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+.card-body {
+  border-radius: 10px;
 }
 
 .card-image {
-  height: 70%;
-  padding: 1.2rem;
-  overflow: hidden;
+  height: 90%;
+  padding-top: 1.2rem;
 }
 
-img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
+.card-image img {
+  height: 350px;
+  width: 90%;
+  object-fit: cover;
   border-radius: 5px;
-}
-
-.card-body {
-  height: 30%;
 }
 
 .card-title {
   font-size: 1.8rem;
-  margin-bottom: 0.8rem;
+  padding-top: 1.2rem;
+  padding-bottom: 1.2rem;
 }
-
-.card-subtitle {
-  font-size: 1rem;
-}
-
-.card-text {
-  font-size: 0.8rem;
-}
-
 /* ---------------- Card styles Detail page ---------------- */
 .detail-product-card {
   max-width: 80%;

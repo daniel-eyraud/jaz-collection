@@ -168,6 +168,7 @@ rows.forEach((row) => {
 ## Areas for Improvement
 
 - Style Detail Page / refine Main page (text + add one more set of colour?)
+- Bootstrap functionality of $display-font-sizes
   - Add Carroussel option for images
 - Add a button to go back to main page from the detail page
 - Add a About me page?
