@@ -25,25 +25,37 @@ async function populateDetail() {
 
   // Get all photo URLs from the data object
   const photos = headers
-    .filter((h) => h.includes("photo")) // filter the headers to get only those that include "photo"
-    .map((h) => data[h]) //
-    .filter((url) => url); // filter out any undefined or null values from the array of photo URLs
+    .filter((h) => h.includes("photo")) // keep only header names related to photos → ["photo principale", "photo1", ...]
+    .map((h) => data[h]) // replace each header name with its corresponding value (URL) from data → ["url1.jpg", undefined, "url3.jpg", ...]
+    .filter((url) => url); // remove empty/undefined values → ["url1.jpg", "url3.jpg", ...]
 
   const detailProductCard = document.createElement("div");
 
-  detailProductCard.classList.add("col-12", "detail-product-card");
+  detailProductCard.classList.add(
+    "detail-product-card",
+    "col-12",
+    "ps-4",
+    "pe-4",
+  );
   detailProductCard.innerHTML = `
-    <div class="card">
-        <div class="detail-card-image"> 
-            ${photos.map((url) => `<img src="${url}" alt="${data["nom"]}">`).join("")}
+    <div class="row pb-5">
+      <div class="detail-card-image col-12 col-md-6">
+        <div class="detail-card-image-principale pb-3"><img src="${photos[0]}" alt="${data["nom"]}"></div>
+        <div class="detail-card-image-secondaires d-flex gap-3">
+          ${photos
+            .slice(1)
+            .map((url) => `<img src="${url}" alt="${data["nom"]}">`)
+            .join("")}
         </div>
-        <div class="detail-card-body">
-            <h5 class="detail-card-title">${data["nom"]}</h5>
-            <p class="detail-card-text">${`Année: ${data["annee"] ?? ""}`}</p>
-            <p class="detail-card-text">${`Quelques info: ${data["commentaire"] ?? ""}`}</p>
-            <p class="detail-card-text">${`État: ${data["etat"] ?? ""}`}</p>
-        </div>
-    </div>
+      </div>
+      <div class="detail-card-info col-12 col-md-6 text-start pt-4">
+          <h5 class="detail-card-title">${data["nom"]}</h5>
+          <p class="detail-card-text pt-3">${`Année: ${data["annee"] ?? ""}`}</p>
+          <p class="detail-card-text pt-3">${`Quelques info: ${data["commentaire"] ?? ""}`}</p>
+          <p class="detail-card-text pt-3">${`État: ${data["etat"] ?? ""}`}</p>
+          <a href="index.html" class="back pt-5" aria-label="Retour page d'accueil">Retour a la page d'accueil</a>
+      </div>
+  </div>
     `;
   detailContainer.appendChild(detailProductCard);
 }
