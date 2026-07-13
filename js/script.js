@@ -4,11 +4,11 @@ const apiURL = `https://docs.google.com/spreadsheets/d/${sheetID}/gviz/tq?tqx=ou
 const collectionContainer = document.getElementById("collection-container");
 
 const cardColor = [
-  { background: "var(--color-blue)", color: "var(--color-raisinBlack)" },
-  { background: "var(--color-orange)", color: "var(--color-raisinBlack)" },
-  { background: "var(--color-brown)", color: "var(--color-bg)" },
-  { background: "var(--color-green)", color: "var(--color-bg)" },
-  { background: "var(--color-raisinBlack)", color: "var(--color-bg)" },
+  { background: "var(--color-pale)", color: "var(--color-raisinBlack)" },
+  // { background: "var(--color-orange)", color: "var(--color-raisinBlack)" },
+  // { background: "var(--color-brown)", color: "var(--color-bg)" },
+  // { background: "var(--color-green)", color: "var(--color-bg)" },
+  // { background: "var(--color-raisinBlack)", color: "var(--color-bg)" },
 ];
 
 async function populateCollection() {

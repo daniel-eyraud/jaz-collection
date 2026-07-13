@@ -8,11 +8,14 @@
 
   /* Colour palette */
   --color-text: #2e201d;
-  --color-bg: #eadfc9;
-  --color-blue: #9eb8b9;
-  --color-orange: #c06225;
-  --color-brown: #984519;
   --color-raisinBlack: #2e201d;
+  --color-bg: #eadfc9;
+  --color-pale: #f4f4f5;
+  --color-flash: #ef4545;
+  --color-blue: #aabccc;
+
+  --color-orange: #f6821e;
+  --color-brown: #984519;
   --color-green: #26422b;
 }
 
@@ -27,7 +30,8 @@ body {
 
 /* ---------------- Header ---------------- */
 header {
-  border-bottom: var(--color-brown) 1px solid;
+  border-bottom: var(--color-flash) 1.2px solid;
+  padding-bottom: 1.2rem;
 }
 
 header h1 {
@@ -42,7 +46,7 @@ header h2 {
 /* ---------------- Footer ---------------- */
 footer {
   padding: 1rem;
-  border-top: var(--color-brown) 1px solid;
+  border-top: var(--color-flash) 1.2px solid;
 }
 
 footer p {
@@ -73,7 +77,7 @@ footer p {
 }
 
 .card-body {
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 .card-image {
@@ -85,13 +89,13 @@ footer p {
   height: 330px;
   width: 90%;
   object-fit: cover;
-  border-radius: 5px;
+  border-radius: 3px;
 }
 
 .card-title {
-  font-size: 1.8rem;
-  padding-top: 1.2rem;
-  padding-bottom: 1.2rem;
+  font-size: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 /* ---------------- Card styles Detail page ---------------- */
 #detail-container {
