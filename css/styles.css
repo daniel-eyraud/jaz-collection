@@ -8,12 +8,16 @@
 
   /* Colour palette */
   --color-text: #2e201d;
-  --color-raisinBlack: #2e201d;
+  --color-neutre: #eae5da;
+  --color-greenBis: #5f6a48;
+  --color-orangeBis: #bb572d;
+  --color-beige: #f5e8d7;
+
+  /* Colour palette  old */
   --color-bg: #eadfc9;
   --color-pale: #f4f4f5;
   --color-flash: #ef4545;
   --color-blue: #aabccc;
-
   --color-orange: #f6821e;
   --color-brown: #984519;
   --color-green: #26422b;
@@ -23,14 +27,14 @@
 body {
   font-family: var(--font-body);
   color: var(--color-text);
-  background-color: var(--color-bg);
+  background-color: var(--color-neutre);
 }
 
 /* ---------------- Shared / Utilities ---------------- */
 
 /* ---------------- Header ---------------- */
 header {
-  border-bottom: var(--color-flash) 1.2px solid;
+  border-bottom: var(--color-orangeBis) 3px solid;
   padding-bottom: 1.2rem;
 }
 
@@ -46,7 +50,7 @@ header h2 {
 /* ---------------- Footer ---------------- */
 footer {
   padding: 1rem;
-  border-top: var(--color-flash) 1.2px solid;
+  border-top: var(--color-orangeBis) 3px solid;
 }
 
 footer p {
@@ -60,8 +64,7 @@ footer p {
 }
 
 .product-card {
-  margin-bottom: 24px;
-  border-radius: 10px;
+  border-radius: 8px;
   max-width: min(95%, 450px);
   margin-left: auto;
   margin-right: auto;
@@ -78,28 +81,38 @@ footer p {
 
 .card-body {
   border-radius: 8px;
+  background-color: var(--color-blue);
 }
 
 .card-image {
-  height: 90%;
-  padding-top: 1.2rem;
+  padding: 1rem;
 }
 
 .card-image img {
-  height: 330px;
-  width: 90%;
+  height: auto;
+  width: 100%;
   object-fit: cover;
   border-radius: 3px;
 }
 
 .card-title {
+  color: var(--color-text);
   font-size: 1rem;
-  padding-top: 1rem;
+  letter-spacing: 1.5px;
   padding-bottom: 1rem;
 }
+
 /* ---------------- Card styles Detail page ---------------- */
 #detail-container {
   max-width: 1200px;
+}
+
+.detail-product-card {
+  background-color: var(--color-pale);
+  border-radius: 8px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
 }
 
 .detail-card-image {
@@ -125,9 +138,10 @@ footer p {
 }
 
 .back {
-  text-decoration: none !important;
-  color: var(--color-orange);
+  font-family: var(--font-title);
   font-size: 1.2rem;
+  text-decoration: none !important;
+  color: var(--color-orangeBis);
 }
 
 .back:hover,

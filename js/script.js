@@ -4,11 +4,8 @@ const apiURL = `https://docs.google.com/spreadsheets/d/${sheetID}/gviz/tq?tqx=ou
 const collectionContainer = document.getElementById("collection-container");
 
 const cardColor = [
-  { background: "var(--color-pale)", color: "var(--color-raisinBlack)" },
-  // { background: "var(--color-orange)", color: "var(--color-raisinBlack)" },
-  // { background: "var(--color-brown)", color: "var(--color-bg)" },
-  // { background: "var(--color-green)", color: "var(--color-bg)" },
-  // { background: "var(--color-raisinBlack)", color: "var(--color-bg)" },
+  { background: "var(--color-pale)", color: "var(--color-pale)" },
+  { background: "var(--color-pale)", color: "var(--color-pale)" },
 ];
 
 async function populateCollection() {
@@ -30,18 +27,25 @@ async function populateCollection() {
 
     // Cycle through the cardColor array to assign colors to the cards
     const colorIndex = index % cardColor.length;
+
     // Use a default image if the photo URL is missing so data is either undefined or null
     let photoURL = data["photo principale"] ?? "images/no-photo.webp";
     // Create a card for each row of the data object and populate with values
     const productCard = document.createElement("div");
-    productCard.classList.add("product-card", "col-12", "col-md-6", "col-lg-4");
+    productCard.classList.add(
+      "product-card",
+      "col-12",
+      "col-md-6",
+      "col-lg-4",
+      "mb-4",
+    );
     productCard.innerHTML = `
         <a href = "detail.html?id=${index}">
-          <div class="card-body" style="background: ${cardColor[colorIndex].background}; color: ${cardColor[colorIndex].color};">
+            <div class="card-body" style="background: ${cardColor[colorIndex].background}; color: ${cardColor[colorIndex].color};">
             <div class="card-image"> 
               <img src="${photoURL}" alt="${data["nom"]}">
             </div>
-              <h5 class="card-title">${data["nom"].toUpperCase()}</h5>
+            <h5 class="card-title">${data["nom"].toUpperCase()}</h5>
           </div>
         </a>  
     `;

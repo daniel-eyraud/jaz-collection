@@ -31,32 +31,29 @@ async function populateDetail() {
 
   const detailProductCard = document.createElement("div");
 
-  detailProductCard.classList.add(
-    "detail-product-card",
-    "col-12",
-    "ps-4",
-    "pe-4",
-  );
+  detailProductCard.classList.add("col-12", "mb-4");
   detailProductCard.innerHTML = `
-    <div class="row pb-5">
-      <div class="detail-card-image col-12 col-md-6">
-        <div class="detail-card-image-principale pb-3"><img src="${photos[0]}" alt="${data["nom"]}"></div>
-        <div class="detail-card-image-secondaires d-flex gap-3">
-          ${photos
-            .slice(1)
-            .map((url) => `<img src="${url}" alt="${data["nom"]}">`)
-            .join("")}
+    <div class="detail-product-card">
+      <div class="row pb-5">
+        <div class="detail-card-image col-12 col-md-6">
+          <div class="detail-card-image-principale pb-3"><img src="${photos[0]}" alt="${data["nom"]}"></div>
+          <div class="detail-card-image-secondaires d-flex gap-3">
+            ${photos
+              .slice(1)
+              .map((url) => `<img src="${url}" alt="${data["nom"]}">`)
+              .join("")}
+          </div>
+        </div>
+        <div class="detail-card-info col-12 col-md-6 text-start pt-4">
+            <h5 class="detail-card-title">${data["nom"]}</h5>
+            <p class="detail-card-text pt-5">${`Année: ${data["annee"] ?? ""}`}</p>
+            <p class="detail-card-text pt-3">${`Quelques info: ${data["commentaire"] ?? ""}`}</p>
+            <p class="detail-card-text pt-3">${`État: ${data["etat"] ?? ""}`}</p>
+            <a href="index.html" class="back pt-5" aria-label="Retour page d'accueil">&lt; Retour</a>
         </div>
       </div>
-      <div class="detail-card-info col-12 col-md-6 text-start pt-4">
-          <h5 class="detail-card-title">${data["nom"]}</h5>
-          <p class="detail-card-text pt-3">${`Année: ${data["annee"] ?? ""}`}</p>
-          <p class="detail-card-text pt-3">${`Quelques info: ${data["commentaire"] ?? ""}`}</p>
-          <p class="detail-card-text pt-3">${`État: ${data["etat"] ?? ""}`}</p>
-          <a href="index.html" class="back pt-5" aria-label="Retour page d'accueil">Retour a la page d'accueil</a>
-      </div>
-  </div>
-    `;
+    </div>
+  `;
   detailContainer.appendChild(detailProductCard);
 }
 
