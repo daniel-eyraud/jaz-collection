@@ -8,6 +8,7 @@
 
   /* Colour palette */
   --color-text: #2e201d;
+  --color-raisinBlack: #2e201d;
   --color-bg: #eadfc9;
   --color-pale: #f4f4f5;
   --color-flash: #ef4545;
@@ -59,61 +60,43 @@ footer p {
 }
 
 .product-card {
-  border-radius: 8px;
+  margin-bottom: 24px;
+  border-radius: 10px;
   max-width: min(95%, 450px);
   margin-left: auto;
   margin-right: auto;
-}
-
-.card-body {
-  border-radius: 8px;
-  background-color: var(--color-pale);
-}
-
-.card-image {
-  position: relative;
-  padding: 0.8rem;
-}
-
-.card-image img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 3px;
-  transition: opacity 0.5s ease;
-  display: block;
-  margin: 0 auto;
-}
-
-.card-image:hover img {
-  opacity: 0.3;
-}
-
-.overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  transition: opacity 0.8s ease;
-  text-align: center;
-  pointer-events: none; /* prevent the overlay to block the clic on the link */
-}
-
-.card-image:hover .overlay {
-  opacity: 1;
 }
 
 .product-card a {
   text-decoration: none;
 }
 
-.card-title {
-  font-family: var(--font-title);
-  color: var(--color-text);
-  font-size: 2.2rem;
+.product-card:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease;
 }
 
+.card-body {
+  border-radius: 8px;
+}
+
+.card-image {
+  height: 90%;
+  padding-top: 1.2rem;
+}
+
+.card-image img {
+  height: 330px;
+  width: 90%;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+.card-title {
+  font-size: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
 /* ---------------- Card styles Detail page ---------------- */
 #detail-container {
   max-width: 1200px;
