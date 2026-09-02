@@ -32,19 +32,42 @@ body {
 
 /* ---------------- Shared / Utilities ---------------- */
 
-/* ---------------- Header ---------------- */
+/* ---------------- Navbar ---------------- */
 header {
   border-bottom: var(--color-orangeBis) 3px solid;
   padding-bottom: 1.2rem;
 }
 
-header h1 {
-  font-family: var(--font-title);
-  font-size: 5rem !important;
+.navbar {
+  text-align: left;
 }
 
-header h2 {
+.navbar-brand,
+.nav-link,
+.nav-icon {
+  color: var(--color-text);
+}
+
+.navbar-brand {
+  font-family: var(--font-title);
   font-size: 1.8rem !important;
+}
+
+.nav-link {
+  font-size: 1.3rem;
+  padding: 0;
+}
+
+.navbar-link-specific:hover {
+  color: var(--color-orangeBis);
+}
+
+.navbar-toggler,
+.navbar-toggler:focus,
+.navbar-toggler:active {
+  border: none;
+  box-shadow: none;
+  outline: none;
 }
 
 /* ---------------- Footer ---------------- */
@@ -56,6 +79,17 @@ footer {
 footer p {
   font-size: 1.2rem;
   margin: 0;
+}
+
+.footer-credit {
+  color: var(--color-text);
+  text-decoration: none;
+  opacity: 0.4;
+  font-size: 1rem;
+}
+
+.footer-credit:hover {
+  color: var(--color-orangeBis);
 }
 
 /* ---------------- Card styles Main page ---------------- */
@@ -148,3 +182,10 @@ footer p {
 .back:focus {
   color: var(--color-text);
 }
+
+/* ---------------- About Section ---------------- */
+#about-section {
+  text-align: left;
+}
+
+/* ---------------- Media specific navbar for Mobile ---------------- */
