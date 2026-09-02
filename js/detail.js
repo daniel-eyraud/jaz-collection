@@ -49,12 +49,26 @@ async function populateDetail() {
             <p class="detail-card-text pt-5">${`Année: ${data["annee"] ?? ""}`}</p>
             <p class="detail-card-text pt-3">${`Quelques info: ${data["commentaire"] ?? ""}`}</p>
             <p class="detail-card-text pt-3">${`État: ${data["etat"] ?? ""}`}</p>
-            <a href="index.html" class="back pt-5" aria-label="Retour page d'accueil">&lt; Retour</a>
+            <a href="collection.html" class="back pt-5" aria-label="Retour page d'accueil">&lt; Retour</a>
         </div>
       </div>
     </div>
   `;
   detailContainer.appendChild(detailProductCard);
+  initGallery();
+}
+
+function initGallery() {
+  const allPhotos = document.querySelectorAll(
+    ".detail-card-image-secondaires img",
+  );
+  const mainImage = document.querySelector(".detail-card-image-principale img");
+
+  allPhotos.forEach((photo) =>
+    photo.addEventListener("click", (event) => {
+      mainImage.src = photo.src;
+    }),
+  );
 }
 
 populateDetail();
