@@ -44,12 +44,17 @@ async function populateDetail() {
               .join("")}
           </div>
         </div>
-        <div class="detail-card-info col-12 col-md-6 text-start pt-4">
-            <h5 class="detail-card-title">${data["nom"]}</h5>
-            <p class="detail-card-text pt-5">${`Année: ${data["annee"] ?? ""}`}</p>
-            <p class="detail-card-text pt-3">${`Quelques info: ${data["commentaire"] ?? ""}`}</p>
-            <p class="detail-card-text pt-3">${`État: ${data["etat"] ?? ""}`}</p>
-            <a href="collection.html" class="back pt-5" aria-label="Retour page d'accueil">&lt; Retour</a>
+        <div class="col-12 col-md-6 text-start pt-4">
+          <div class="mb-5">
+            <h5 class="detail-card-title mb-5">${data["nom"]}</h5>
+            <p class="mb-3"><span class="detail-card-label">Année: </span>${data["annee"] ?? ""}</p>
+            <p class="detail-card-label mb-3">Quelques informations:</p>
+            <p class="mb-3">${`${data["commentaire"] ?? ""}`}</p>
+            <p class="mb-3"><span class="detail-card-label">État: </span>${data["etat"] ?? ""}</p>
+          </div>
+          <div class="back">
+            <a href="collection.html" aria-label="Retour page d'accueil">&lt; Retour</a>
+          </div>
         </div>
       </div>
     </div>

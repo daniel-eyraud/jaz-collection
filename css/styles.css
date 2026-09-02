@@ -171,9 +171,13 @@ footer p {
   font-size: 2.5rem;
 }
 
-.back {
-  font-family: var(--font-title);
+.detail-card-label {
   font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.back a {
+  font-size: 1.8rem;
   text-decoration: none !important;
   color: var(--color-orangeBis);
 }
@@ -186,6 +190,12 @@ footer p {
 /* ---------------- About Section ---------------- */
 #about-section {
   text-align: left;
+}
+
+.about-container {
+  background-color: var(--color-pale);
+  border-radius: 8px;
+  padding: 1.5rem;
 }
 
 /* ---------------- Media specific navbar for Mobile ---------------- */
