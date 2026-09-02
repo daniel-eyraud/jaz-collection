@@ -66,7 +66,9 @@ function initGallery() {
 
   allPhotos.forEach((photo) =>
     photo.addEventListener("click", (event) => {
+      const currentPhoto = mainImage.src;
       mainImage.src = photo.src;
+      photo.src = currentPhoto;
     }),
   );
 }
