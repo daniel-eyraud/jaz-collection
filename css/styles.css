@@ -92,6 +92,43 @@ footer p {
   color: var(--color-orangeBis);
 }
 
+/* ---------------- Landing Page ---------------- */
+.hero {
+  flex: 1 1 auto;
+  min-height: 0;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-media {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.hero-media .hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.hero-title {
+  font-family: var(--font-title);
+  font-size: 2rem;
+  color: var(--color-neutre);
+  line-height: 1.4;
+  text-align: center;
+  margin: 0;
+  z-index: 2;
+}
+
 /* ---------------- Card styles Main page ---------------- */
 #collection-container {
   max-width: 1600px;
